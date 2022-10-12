@@ -1,10 +1,8 @@
 import pandas as pd
 import sklearn 
 import matplotlib.pyplot as plt
-# Se Importan los modulos para hacer el PCA.
-from sklearn.decomposition import PCA
+# Se Importan los modulos para hacer el Kernel PCA.
 from sklearn.decomposition import KernelPCA
-from sklearn.decomposition import IncrementalPCA
 # Se hace la importacion de un modulo que nos sirva para comparar.
 from sklearn.linear_model import LogisticRegression
 # Para preparar los datos antes del entrenamiento
@@ -33,24 +31,13 @@ if __name__ == '__main__':
     X_train, X_test, y_train, y_test = train_test_split(df_features, df_target, test_size=0.3, random_state=42)
 
     #print(X_train.shape[0]/df_features.shape[0])
-    pca = PCA(n_components=3)
-    pca.fit(X_train)
-    ipca = IncrementalPCA(n_components=3, batch_size=10)
-    ipca.fit(X_train)
+    kpca = KernelPCA(n_components=4, kernel='rbf')
+    kpca.fit(X_train)
 
-    plt.plot(range(len(pca.explained_variance_)), 
-             pca.explained_variance_ratio_)
-    plt.grid()
-    plt.show()
- 
-    # Comparasion entre los dos metodos de reduccion
+    df_train = kpca.transform(X_train)
+    df_test = kpca.transform(X_test)
+
     logistic = LogisticRegression(solver='lbfgs')
-    df_train = pca.transform(X_train)
-    df_test = pca.transform(X_test)
     logistic.fit(df_train, y_train)
-    print("Score PCA: ", logistic.score(df_test, y_test))
 
-    df_train = ipca.transform(X_train)
-    df_test = ipca.transform(X_test)
-    logistic.fit(df_train, y_train)
-    print("Score IPCA: ", logistic.score(df_test, y_test))
+    print("Score KPCA: ", logistic.score(df_test, y_test))
