@@ -1,4 +1,4 @@
-# Este es un proyecto del curso de Scikit-Learn de Platzi
+# Este es un proyecto del curso de Scikit-Learn
 
 Datasets que usaremos en el curso:
 
@@ -73,3 +73,51 @@ En la literatura hay tres tipos principales, y estos son:
 - **ElasticNet**: Es una combinacion de las dos anteriores.
 
 No hay campeon definitivo para todos los problemas, es por eso que toca realizar pruebas o con la experiencia tomar diciones de cual usar. Si hay pocas caracteristicas que se relacionen directamente con la variable a predecir: **Probar Lasso**. Si hay varias caracteristicas relacionadas con la variable a predecir, **probar Ridge**.
+
+## Problema de los Valores Atípicos
+
+Primero podemos definir que un **dato atípico** son todas aquellas mediciones que se encuentren por fuera del comportamiento general de una muestra de datos. Estos pueden indicar variabilidad, errores de medicion, o novedades.
+
+- Pueden ser problematicos o no.
+     1. Pueden generar sesgos importantes en los modelos de Machine Learning.
+     2. Pueden contienener informacion relevante sobre la naturaleza de los datos.
+     3. Deteccion temprana de fallos.
+
+Para identificarlos se puede hacer por:
+
+- **Z-score**: Mide la distancia (en desviaciones estandar) de un punto dado a la media.
+- Tecnicas de clustering como DBSCAN.
+- O con el metodo de Dixon si $q < Q_1 - 1.5 \times IQR$ o $q > Q_3 + 1.5 \times IQR$. Es de resaltar que el factor 1.5 puede variar a 3.0 dependiendo de si es una cola pesada y picada.
+
+Con scikit podemos usar metodos conocidos como regresiones robustas. Algunos de estos modelos son:
+
+- **RANSAC (Random Sample Consensus)**: Usamos una muestra aleatoria sobre el conjunto de datos que tenemos, buscando la muestra que mas datos "buenos" logre incluir. El modelo asume que los "valores malos" no tienen patrones especificos.
+- **Huber Regresor**: No ignora los valores atipicos, disminuye su influencia en el modelo. Los datos son tratados como atipicos si el error absoluto de nuestra perdida esta por encima de un umbral llamado epsilon. Se ha demostrado que un valor de epsilon que logra un 95% de eficiencia estadistica es $1.35$.
+
+## Metodos de ensamble
+
+1. Combinar diferentes metodos de ML con diferentes configuraciones y aplicar un metodo para lograr un consenso.
+2. La diversidad es una buena opcion.
+3. Los metodos de ensamble se han destacado por ganar muchas competencias de ML.
+
+**Bagging**: es como si nuestros algoritmos de ML fueran diferentes expertos y lo que hacemos es tener la opinion de cada uno de los expertos, esto lo hace de manera paralela. (Bootstrap AGGragation)
+
+**Boosting**: en este caso le pedimos a un experto su criterio sobre un problema. Medimos su posible error, y luego usando ese error calculado le pedimos a otro experto su juicio sobre el mismo problema.
+
+## Clustering
+
+Estrategia de machine learning de aprendizaje no supervizado. Los algoritmos de clustering son las estrategias que podemos usar para agrupar los datos de tal manera que todos los datos pertenecientes a un grupo sean lo mas similares que sea posible entre si, y lo mas diferentes a los de otros grupos.
+
+Algunos casos en los que se aplica clustering:
+
+- No conocemos con anterioridad las etiquetas de nuestros datos.
+- Queremos descubrir patrones ocultos a simple vista.
+- Queremos identificar datos atipicos.
+
+Algunos algoritmos son:
+
+- k-means
+- Spectral Clustering
+- Meanshift
+- Clustering Jerarquico
+- DBScan
