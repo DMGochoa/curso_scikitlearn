@@ -159,3 +159,18 @@ Tipos de validacion:
    2. Identificar los rangos de valores que pueden tomar ciertos parametros.
    3. Usar Cross Validation.
    4. Esperar a ver si hay algun resultado.
+
+## Material Adicional (Dar click para ingresar a las paginas)
+
+- [**Canal StatQuest con Josh Starmer**](https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw)
+- [**Canal SentDex**](https://www.youtube.com/user/sentdex)
+- [**Blog especializado en Data Science**](https://towardsdatascience.com/)
+- [**The art of data science**](https://bookdown.org/rdpeng/artofdatascience/)
+- [**Canal AMP Tech**](https://www.youtube.com/channel/UCG4H4Qf-ZU9Ycr_PQ4egqDQ)
+- [**Tensorflow Coding**](https://www.youtube.com/watch?v=ZMkYL942RBw&list=PLQY2H8rRoyvz3rEFpW2I3gPSru5xm8Bf7)
+- [**Canal de 3Blue1Brown**](https://www.youtube.com/watch?v=aircAruvnKk)
+- [**El curso de Deep Learning para PLN de Stanford**](http://web.stanford.edu/class/cs224n/)
+- [**Canal de Daniel Shiffman “The Coding Train”**](https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw)
+- [**El libro de Daniel Shiffman de introducción a la vida artificial usando P5.JS**](https://natureofcode.com/book/)
+- [**canal de Andrew Ng**](https://www.youtube.com/channel/UCcIXc5mJsHVYTZR1maL5l9w)
+[**Deeplearning.ai**](http://deeplearning.ai/)

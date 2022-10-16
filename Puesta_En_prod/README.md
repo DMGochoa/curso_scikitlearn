@@ -1,4 +1,5 @@
 # Curso de Scikit-Learn
+
 Repositorio de código usado durante el Curso Profesional de Scikit-Learn para Platzi.
 
 En este repositorio podrás encontrar 16 ramas relacionadas con el curso, en orden:
@@ -6,7 +7,7 @@ En este repositorio podrás encontrar 16 ramas relacionadas con el curso, en ord
 1. preparacion_datos_pca
 2. implementacion_algoritmo_pca
 3. kernel_y_pca
-4. implementacion_lasso_ridge 
+4. implementacion_lasso_ridge
 5. preparacion_regresion_robusta
 6. implementacion_regresion_robusta
 7. preparacion_datos_bagging
