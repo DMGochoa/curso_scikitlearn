@@ -121,3 +121,41 @@ Algunos algoritmos son:
 - Meanshift
 - Clustering Jerarquico
 - DBScan
+
+## Validacion Cruzada
+
+La ultima palabra la tienen los datos. Necesitamos mentalidad de testeo y todos los modelos son malos, solamente que algunos resultan utiles.
+
+Tipos de validacion:
+
+- Dividir datos de entrenamiento y de prueba (Hold-Out)
+  - Se requiere un protoripo rapido
+  - No se tiene mucho conocimiento
+  - No se cuenta con un equipo con abundante poder de computo
+- Usar validacion cruzada (K-folds)
+  - Recomendable en la mayoria de los casos.
+  - Se cuenta con un equipo suficiente para desarrollar ML
+  - Se requiere la integracion con tecnicas de optimizacion parametrica
+  - Se tiene mas timepo para las pruebas
+- Validacion Cruzada (LOOCV)
+  - Se tiene gran poder de computo.
+  - Se cuenta con pocos datos como para dividir por trining/Test
+  - Se busca hacer la validacion muy exaustiva
+
+## Enfoques de Optimizacion Parametrica
+
+1. Optimizacion Manual
+   1. Escoger el modelo que queremos ajustar.
+   2. Buscar en la documentacion que parametros hay.
+   3. Identificar los posibles ajustes.
+   4. Probar combinaciones iterativamente.
+2. Optimizacion por grilla de parametros [**GridSearchCV**](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)
+   1. Definir una o varias metricas que queramos optimizar.
+   2. Identificar los posibles valores que pueden tener los parametros.
+   3. Usar Cross Validation.
+   4. Esperar a ver si hay algun resultado.
+3. Optimizacion por busqueda Aleatoria [**RandomizedSearchCV**](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html)
+   1. Definir una o varias metricas que queramos optimizar.
+   2. Identificar los rangos de valores que pueden tomar ciertos parametros.
+   3. Usar Cross Validation.
+   4. Esperar a ver si hay algun resultado.
